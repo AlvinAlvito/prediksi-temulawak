@@ -29,326 +29,340 @@
 </head>
 
 <body id="top">
+  <main>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+          <i class="bi bi-leaf"></i>
+          <span>TemulawakSmart</span>
+        </a>
 
-    <main>
-
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <i class="bi-back"></i>
-                    <span>Oyen PetShop</span>
-                </a>
-
-                <div class="d-lg-none ms-auto me-4">
-                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                </div>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <form method="POST" action="/" class="modal-content">
-                            @csrf
-                            <div class="modal-header">
-                                <h5 class="modal-title">Login Admin</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                @if ($errors->has('login'))
-                                    <div class="alert alert-danger">{{ $errors->first('login') }}</div>
-                                @endif
-                                <div class="mb-3">
-                                    <label>Username: admin</label>
-                                    <input type="text" name="username" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label>Password: 123</label>
-                                    <input type="password" name="password" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary">Login</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Beranda</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">Tentang Kami</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Fitur</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Hasil Perhitungan</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Kontak</a>
-                        </li>
-                    </ul>
-
-                    <div class="d-none d-lg-block">
-                        <a href="#top" data-bs-toggle="modal" data-bs-target="#loginModal"
-                            class="navbar-icon bi-person smoothscroll"></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-
-        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-10 col-12 mx-auto text-center">
-                        <h1 class="text-white">Sistem Peramalan Penjualan Oyen PetShop</h1>
-
-                        <h6 class="text-white mt-3">
-                            Visualisasi & Prediksi Penjualan Menggunakan Metode Fuzzy Time Series
-                        </h6>
-
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
-                            class="btn btn-light btn-lg mt-4">
-                            Masuk Dashboard
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="featured-section">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                        <div class="custom-block bg-white shadow-lg">
-                            <div class="d-flex">
-                                <div>
-                                    <h5 class="mb-2">Manajemen Data Penjualan</h5>
-                                    <p class="mb-0">Admin dapat menambahkan data penjualan per bulan untuk setiap
-                                        produk Oyen PetShop, seperti jumlah dan harga satuan.</p>
-                                </div>
-                                <span class="badge bg-success rounded-pill ms-auto">✓</span>
-                            </div>
-
-                            <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid"
-                                alt="Input Data Penjualan">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                        <div class="custom-block bg-white shadow-lg">
-                            <div class="d-flex">
-                                <div>
-                                    <h5 class="mb-2">Prediksi Otomatis</h5>
-                                    <p class="mb-0">Sistem menghitung prediksi penjualan 7 bulan ke depan secara
-                                        otomatis dengan metode Fuzzy Time Series.</p>
-                                </div>
-                                <span class="badge bg-primary rounded-pill ms-auto">✓</span>
-                            </div>
-
-                            <img src="images/topics/colleagues-working-cozy-office-medium-shot.png"
-                                class="custom-block-image img-fluid" alt="Prediksi">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-12">
-                        <div class="custom-block bg-white shadow-lg">
-                            <div class="d-flex">
-                                <div>
-                                    <h5 class="mb-2">Visualisasi dan Analisis</h5>
-                                    <p class="mb-0">Tampilkan grafik perbandingan data aktual dan hasil prediksi per
-                                        produk, serta nilai akurasi (MAPE).</p>
-                                </div>
-                                <span class="badge bg-info rounded-pill ms-auto">✓</span>
-                            </div>
-
-                            <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid"
-                                alt="Visualisasi Data">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="timeline-section section-padding mt-5" id="section_3">
-            <div class="section-overlay"></div>
-
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-12 text-center">
-                        <h2 class="text-white mb-4">Bagaimana Sistem Ini Bekerja?</h2>
-                    </div>
-
-                    <div class="col-lg-10 col-12 mx-auto">
-                        <div class="timeline-container">
-                            <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
-                                <div class="list-progress">
-                                    <div class="inner"></div>
-                                </div>
-
-                                <li>
-                                    <h4 class="text-white mb-3">1. Input Data Penjualan Produk</h4>
-                                    <p class="text-white">
-                                        Admin menginput data penjualan untuk masing-masing produk Oyen Petshop dari bulan
-                                        April 2024 hingga Maret 2025.
-                                        Data ini meliputi nama produk, harga satuan, dan jumlah penjualan per bulan.
-                                    </p>
-                                    <div class="icon-holder">
-                                        <i class="bi-pencil-square"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h4 class="text-white mb-3">2. Sistem Proses Fuzzy Time Series</h4>
-                                    <p class="text-white">
-                                        Setelah data disimpan, sistem secara otomatis menghitung persamaan regresi
-                                        linier sederhana
-                                        untuk setiap produk. Nilai koefisien (b), intercept (a), dan MAPE dihitung
-                                        sebagai dasar prediksi.
-                                    </p>
-                                    <div class="icon-holder">
-                                        <i class="bi-gear-fill"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h4 class="text-white mb-3">3. Prediksi Penjualan 7 Bulan ke Depan</h4>
-                                    <p class="text-white">
-                                        Berdasarkan persamaan regresi, sistem menghasilkan prediksi penjualan dari bulan
-                                        Juli hingga Desember.
-                                        Hasil ini disimpan dan dapat dilihat dalam bentuk tabel dan grafik.
-                                    </p>
-                                    <div class="icon-holder">
-                                        <i class="bi-bar-chart-line-fill"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h4 class="text-white mb-3">4. Lihat Visualisasi & Detail Produk</h4>
-                                    <p class="text-white">
-                                        Pengguna dapat melihat detail lengkap untuk setiap produk, termasuk data aktual,
-                                        hasil prediksi,
-                                        nilai MAPE, dan grafik perbandingan. Informasi ini berguna untuk pengambilan
-                                        keputusan bisnis.
-                                    </p>
-                                    <div class="icon-holder">
-                                        <i class="bi-file-earmark-bar-graph"></i>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 text-center mt-5">
-                        <p class="text-white">
-                            Ingin mengetahui prediksi produk Anda?
-                            <a href="#" class="btn custom-btn custom-border-btn ms-3">Hubungi Kami</a>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer section-padding">
-        <div class="container">
-            <div class="row">
-
-                {{-- Brand dan Deskripsi --}}
-                <div class="col-lg-3 col-12 mb-4 pb-2">
-                    <a class="navbar-brand mb-2" href="/">
-                        <i class="bi bi-bar-chart-line-fill"></i>
-                        <span>Oyen PetShop</span>
-                    </a>
-                    <p class="text-white">
-                        Sistem prediksi penjualan Oyen PetShop menggunakan metode regresi linier sederhana. Membantu
-                        pengambilan keputusan bisnis dengan data yang akurat dan visual.
-                    </p>
-                </div>
-
-                {{-- Navigasi Menu --}}
-                <div class="col-lg-3 col-md-4 col-6">
-                    <h6 class="site-footer-title mb-3">Menu</h6>
-                    <ul class="site-footer-links">
-                        <li class="site-footer-link-item"><a href="/" class="site-footer-link">Beranda</a></li>
-                        <li class="site-footer-link-item"><a href="/admin/data-penjualan"
-                                class="site-footer-link">Data Penjualan</a></li>
-                        <li class="site-footer-link-item"><a href="/admin/koefisien"
-                                class="site-footer-link">Koefisien</a></li>
-                        <li class="site-footer-link-item"><a href="/admin/hasil-prediksi"
-                                class="site-footer-link">Hasil Prediksi</a></li>
-                    </ul>
-                </div>
-
-                {{-- Kontak --}}
-                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                    <h6 class="site-footer-title mb-3">Kontak</h6>
-                    <p class="text-white d-flex mb-1">
-                        <a href="tel:081234567890" class="site-footer-link">0812-3456-7890</a>
-                    </p>
-                    <p class="text-white d-flex">
-                        <a href="mailto:admin@prediksiOyen PetShop.id"
-                            class="site-footer-link">admin@prediksiOyen PetShop.id</a>
-                    </p>
-                </div>
-
-                {{-- Bahasa dan Hak Cipta --}}
-                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Bahasa Indonesia
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><button class="dropdown-item" type="button">English</button></li>
-                            <li><button class="dropdown-item" type="button">Melayu</button></li>
-                        </ul>
-                    </div>
-
-                    <p class="copyright-text mt-lg-5 mt-4">
-                        © 2025 Prediksi Penjualan Oyen PetShop.<br>
-                        All rights reserved.<br><br>
-                    </p>
-                </div>
-
-            </div>
+        <div class="d-lg-none ms-auto me-4">
+          <a href="#top" class="navbar-icon bi-person smoothscroll" data-bs-toggle="modal" data-bs-target="#loginModal"></a>
         </div>
-    </footer>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!-- Modal Login (dipercantik) -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <form method="POST" action="/" class="modal-content needs-validation" novalidate>
+              @csrf
+              <div class="modal-header bg-success text-white">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-shield-lock"></i>
+                  <h5 class="modal-title mb-0">Login Admin</h5>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous">
-    </script>
-    <!-- JAVASCRIPT FILES -->
-    <script src="script/jquery.min.js"></script>
-    <script src="script/bootstrap.bundle.min.js"></script>
-    <script src="script/jquery.sticky.js"></script>
-    <script src="script/click-scroll.js"></script>
-    <script src="script/custom.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+              <div class="modal-body">
+                @if ($errors->has('login'))
+                  <div class="alert alert-danger">{{ $errors->first('login') }}</div>
+                @endif
 
+                <p class="text-muted small mb-3">
+                  Masuk untuk mengelola dataset, kriteria, dan melihat hasil perhitungan kemiripan & prediksi.
+                  <br><span class="badge bg-light text-dark">Contoh kredensial • user: <b>admin</b> • pass: <b>123</b></span>
+                </p>
+
+                <div class="mb-3">
+                  <label class="form-label">Username</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" name="username" class="form-control" placeholder="admin" required>
+                    <div class="invalid-feedback">Username wajib diisi.</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-key"></i></span>
+                    <input type="password" name="password" class="form-control" placeholder="••••••" required>
+                    <button class="btn btn-outline-secondary" type="button" onclick="togglePw(this)">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <div class="invalid-feedback">Password wajib diisi.</div>
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Ingat saya</label>
+                </div>
+              </div>
+
+              <div class="modal-footer d-flex justify-content-between">
+                <small class="text-muted">Akses hanya untuk Admin.</small>
+                <button class="btn btn-success"><i class="bi bi-box-arrow-in-right me-1"></i> Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /Modal -->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-lg-5 me-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#section_1">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#section_2">Tentang Temulawak</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#section_3">Cara Kerja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#section_4">Hasil Perhitungan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#section_5">Kontak</a>
+            </li>
+          </ul>
+
+          <div class="d-none d-lg-block">
+            <a href="#top" data-bs-toggle="modal" data-bs-target="#loginModal"
+               class="navbar-icon bi-person smoothscroll"></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section d-flex justify-content-center align-items-center" id="section_1"
+      style="background: linear-gradient(120deg,#0f5132,#198754);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-12 mx-auto text-center">
+            <h1 class="text-white">Sistem Seleksi Bibit Temulawak Terbaik</h1>
+            <h6 class="text-white mt-3">
+              Item-Based Collaborative Filtering untuk rekomendasi bibit berdasarkan kriteria C1–C6
+            </h6>
+
+            <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-light btn-lg mt-4">
+              Masuk Dashboard
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fitur Utama -->
+    <section class="featured-section" id="section_2">
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <div class="col-lg-4 col-12">
+            <div class="custom-block bg-white shadow-lg h-100">
+              <div class="d-flex">
+                <div>
+                  <h5 class="mb-2">Manajemen Dataset Bibit</h5>
+                  <p class="mb-0">
+                    Input satu <b>Dataset</b> berisi 6 bibit (A1–A6) dengan kriteria C1–C6:
+                    Ukuran, Warna, Kondisi Kulit, Usia, Kesehatan, Produktivitas.
+                  </p>
+                </div>
+                <span class="badge bg-success rounded-pill ms-auto">✓</span>
+              </div>
+              <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid" alt="Input Bibit Temulawak">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <div class="custom-block bg-white shadow-lg h-100">
+              <div class="d-flex">
+                <div>
+                  <h5 class="mb-2">Kemiripan (Cosine)</h5>
+                  <p class="mb-0">
+                    Sistem menghitung <b>cosine similarity</b> antar kriteria (C1–C6) untuk setiap dataset, meniru hitungan manual (Tabel 4.13).
+                  </p>
+                </div>
+                <span class="badge bg-primary rounded-pill ms-auto">✓</span>
+              </div>
+              <img src="images/topics/colleagues-working-cozy-office-medium-shot.png"
+                   class="custom-block-image img-fluid" alt="Cosine Similarity">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <div class="custom-block bg-white shadow-lg h-100">
+              <div class="d-flex">
+                <div>
+                  <h5 class="mb-2">Prediksi & Ranking</h5>
+                  <p class="mb-0">
+                    Prediksi rating item kosong & rangking bibit terbaik dengan formula berbasis kemiripan sesuai naskah perhitungan.
+                  </p>
+                </div>
+                <span class="badge bg-info rounded-pill ms-auto">✓</span>
+              </div>
+              <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="Prediksi & Ranking">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline/Cara Kerja -->
+    <section class="timeline-section section-padding mt-5" id="section_3">
+      <div class="section-overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="text-white mb-4">Bagaimana Sistem Ini Bekerja?</h2>
+          </div>
+
+          <div class="col-lg-10 col-12 mx-auto">
+            <div class="timeline-container">
+              <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                <div class="list-progress"><div class="inner"></div></div>
+
+                <li>
+                  <h4 class="text-white mb-3">1. Input Dataset (6 Bibit)</h4>
+                  <p class="text-white">
+                    Admin mengisi Dataset (A1–A6) dengan bobot subkriteria C1–C6. Nilai 0 menandakan belum diisi (akan diprediksi).
+                  </p>
+                  <div class="icon-holder"><i class="bi bi-pencil-square"></i></div>
+                </li>
+
+                <li>
+                  <h4 class="text-white mb-3">2. Hitung Kemiripan</h4>
+                  <p class="text-white">
+                    Sistem menghitung kemiripan antar kriteria menggunakan <em>cosine similarity</em> sesuai tabel acuan manual.
+                  </p>
+                  <div class="icon-holder"><i class="bi bi-gear-fill"></i></div>
+                </li>
+
+                <li>
+                  <h4 class="text-white mb-3">3. Prediksi Rating Item Kosong</h4>
+                  <p class="text-white">
+                    Nilai pada kriteria yang kosong diprediksi menggunakan bobot kemiripan & rating yang tersedia.
+                  </p>
+                  <div class="icon-holder"><i class="bi bi-bar-chart-line-fill"></i></div>
+                </li>
+
+                <li>
+                  <h4 class="text-white mb-3">4. Perangkingan Bibit</h4>
+                  <p class="text-white">
+                    Hasil prediksi dirangking untuk rekomendasi bibit temulawak terbaik pada dataset terkait.
+                  </p>
+                  <div class="icon-holder"><i class="bi bi-file-earmark-bar-graph"></i></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-5">
+            <p class="text-white">
+              Siap mengelola dataset Temulawak?
+              <a href="#" class="btn custom-btn custom-border-btn ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk Admin</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-padding" id="section_5">
+    <div class="container">
+      <div class="row">
+        <!-- Brand & Deskripsi -->
+        <div class="col-lg-3 col-12 mb-4 pb-2">
+          <a class="navbar-brand mb-2 d-flex align-items-center gap-2" href="/">
+            <i class="bi bi-leaf"></i>
+            <span>TemulawakSmart</span>
+          </a>
+          <p class="text-white">
+            Sistem seleksi bibit temulawak berbasis Item-Based Collaborative Filtering. Membantu rekomendasi bibit terbaik dengan perhitungan akurat & visual.
+          </p>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="col-lg-3 col-md-4 col-6">
+          <h6 class="site-footer-title mb-3">Menu</h6>
+          <ul class="site-footer-links">
+            <li class="site-footer-link-item"><a href="/" class="site-footer-link">Beranda</a></li>
+            <li class="site-footer-link-item"><a href="/admin/data-pengecekan" class="site-footer-link">Data Bibit (CRUD)</a></li>
+            <li class="site-footer-link-item"><a href="/admin/hasil-prediksi" class="site-footer-link">Matriks Kemiripan</a></li>
+            <li class="site-footer-link-item"><a href="/admin/prediksi/rangking" class="site-footer-link">Ranking Prediksi</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak -->
+        <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+          <h6 class="site-footer-title mb-3">Kontak</h6>
+          <p class="text-white d-flex mb-1">
+            <a href="tel:081234567890" class="site-footer-link">0812-3456-7890</a>
+          </p>
+          <p class="text-white d-flex">
+            <a href="mailto:admin@temulawaksmart.id" class="site-footer-link">admin@temulawaksmart.id</a>
+          </p>
+        </div>
+
+        <!-- Bahasa & Hak Cipta -->
+        <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Bahasa Indonesia
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">English</button></li>
+              <li><button class="dropdown-item" type="button">Melayu</button></li>
+            </ul>
+          </div>
+
+          <p class="copyright-text mt-lg-5 mt-4">
+            © 2025 TemulawakSmart.<br>
+            All rights reserved.<br><br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+
+  <!-- Optional extras -->
+  <script>
+    // Bootstrap client-side validation
+    (() => {
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Toggle password visibility
+    function togglePw(btn) {
+      const input = btn.parentElement.querySelector('input[type="password"], input[type="text"]');
+      const icon  = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('bi-eye');
+        icon.classList.add('bi-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('bi-eye-slash');
+        icon.classList.add('bi-eye');
+      }
+    }
+  </script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </body>
 
 </html>

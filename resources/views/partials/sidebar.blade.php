@@ -4,7 +4,7 @@
             <img src="/images/logo.jpg"  alt="">
         </div>
 
-        <span class="logo_name">Toko Gento</span>
+        <span class="logo_name">Temulawak</span>
     </div>
 
     <div class="menu-items">
@@ -24,13 +24,13 @@
             <li >
                 <a href="/admin/hasil-prediksi" class="{{ Request::is('/admin/hasil-prediksi') ? 'active' : '' }}">
                     <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">Hasil Prediksi</span>
+                    <span class="link-name">Matriks Kemiripan</span>
                 </a>
             </li>
             <li >
                 <a href="/admin/hasil-rangking" class="{{ Request::is('/admin/hasil-rangking') ? 'active' : '' }}">
                     <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">hasil-rangking</span>
+                    <span class="link-name">Hasil Rangking</span>
                 </a>
             </li>
            

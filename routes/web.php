@@ -46,7 +46,11 @@ Route::get('/admin', function () {
     if (!session('is_admin')) {
         return redirect('/');
     }
-    return view('admin.index'); 
+
+    // panggil langsung controller agar tetap sesuai struktur kamu
+    $controller = app(DashboardController::class);
+    return $controller->index();
+
 })->name('index');
 
 

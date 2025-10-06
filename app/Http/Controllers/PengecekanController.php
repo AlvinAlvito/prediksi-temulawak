@@ -391,6 +391,29 @@ class PengecekanController extends Controller
         ]);
     }
 
+    private function manualSimMatrix(): array
+    {
+        // Tabel 4.13 (dibulatkan 3 desimal)
+        return [
+            'C1' => ['C1' => 1.000, 'C2' => 0.649, 'C3' => 0.800, 'C4' => 0.902, 'C5' => 0.636, 'C6' => 0.901],
+            'C2' => ['C1' => 0.649, 'C2' => 0.999, 'C3' => 0.747, 'C4' => 0.587, 'C5' => 0.645, 'C6' => 0.775],
+            'C3' => ['C1' => 0.800, 'C2' => 0.747, 'C3' => 0.999, 'C4' => 0.820, 'C5' => 0.470, 'C6' => 0.797],
+            'C4' => ['C1' => 0.902, 'C2' => 0.587, 'C3' => 0.820, 'C4' => 0.998, 'C5' => 0.749, 'C6' => 0.835],
+            'C5' => ['C1' => 0.636, 'C2' => 0.645, 'C3' => 0.470, 'C4' => 0.749, 'C5' => 1.000, 'C6' => 0.633],
+            'C6' => ['C1' => 0.901, 'C2' => 0.775, 'C3' => 0.797, 'C4' => 0.835, 'C5' => 0.633, 'C6' => 1.000],
+        ];
+    }
+
+    private function anchorFromUser(string $label): ?string
+    {
+        // Map A1..A6 -> C1..C6
+        if (preg_match('/^A([1-6])$/i', trim($label), $m)) {
+            $idx = (int) $m[1] - 1; // 0..5
+            return ['C1', 'C2', 'C3', 'C4', 'C5', 'C6'][$idx];
+        }
+        return null;
+    }
+
 
 
 
