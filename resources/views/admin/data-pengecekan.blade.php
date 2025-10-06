@@ -17,7 +17,7 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clipboard-notes"></i>
-                    <span class="text">Data Pengecekan Bibit Temulawak</span>
+                    <span class="text">Data Bibit Temulawak</span>
                 </div>
 
                 @if (session('success'))

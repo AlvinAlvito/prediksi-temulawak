@@ -18,7 +18,7 @@
              <li >
                 <a href="/admin/data-pengecekan" class="{{ Request::is('/admin/data-pengecekan') ? 'active' : '' }}">
                     <i class="uil uil-chart"></i>
-                    <span class="link-name">Data Pengecekan</span>
+                    <span class="link-name">Data Bibit</span>
                 </a>
             </li>
             <li >
